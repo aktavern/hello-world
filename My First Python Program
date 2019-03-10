@@ -1,12 +1,27 @@
-# This program says hello, asks for my name, and asks for my age. 
-# Future versions of this should only count letters in a name, and return errors if letters are not entered for the name or numbers are not entered for the age. 
-
-print('Hello!')
-print('What is your name?')
-myName = input()
-print('Thank you, ' + myName)
-print('The length of your name is:')
-print(str(len(myName))
-print('What is your age?')
-myAge = input()
-print('You will be ' +str(int(myAge) + 1) + ' this year.')
+def name_age():
+    print('Hello!')
+    # Checks that the input contains letters. 1 bug: if a space is added with a digit it will not be caught by this. I need to find a better way to check that myName truly does not contain ANY numbers.
+    while True:
+        myName = input('What is your name? ')
+        if (myName.isdigit() == True):
+            print('Please only enter letters.')
+            continue
+        else:
+             break
+   # Converts myName to a string and calculates the length of the name, Excluding any spaces.
+   print('Thank you, ' + myName + '. The length of your name is: ' + str((len(myName) - myName.count(' '))))
+   # Checks that the input contains only numbers. 
+    while True:
+        myAge = input('What is your age? ')
+        if (myAge.isalpha() == True):
+            print('Please only enter numbers.')
+            continue
+        else:
+            break
+    # Do some math on the age provided. 
+    import datetime
+    now = datetime.datetime.now()
+    print('Thank you, ' + myName + '. You were born in the year: ' + str((now.year - 1) - (int(myAge))))
+    print('You will be ' + str(int(myAge) + 1) + ' in the coming year.')
+    print('Half of your age is ' + str(int(myAge) / 2) + '.')
+    print('Good bye!')
