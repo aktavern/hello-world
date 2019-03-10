@@ -54,7 +54,7 @@ def answers():
         print("You are HIGH on agreeableness!")
     if nScore <= 3:
         print("You are LOW on neuroticism!")
-    elif nScore >= 4 and aScore <=6:
+    elif nScore >= 4 and nScore <=6:
         print("You are MEDIUM on neuroticism!")
     else:
         print("You are HIGH on neuroticism!")
