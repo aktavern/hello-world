@@ -22,6 +22,5 @@ def name_age():
     import datetime
     now = datetime.datetime.now()
     print('Thank you, ' + myName + '. You were born in the year: ' + str((now.year - 1) - (int(myAge))))
-    print('You will be ' + str(int(myAge) + 1) + ' in the coming year.')
     print('Half of your age is ' + str(int(myAge) / 2) + '.')
     print('Good bye!')
